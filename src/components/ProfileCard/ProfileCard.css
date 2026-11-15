@@ -1,0 +1,405 @@
+/* ==========================================================================
+   ProfileCard Component Styles
+   Supports 4 Design Templates + 5 Accent Themes
+   ========================================================================== */
+
+.profile-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: text;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   Template 1: Cyber Glass (Default)
+   -------------------------------------------------------------------------- */
+.profile-card.template-cyber-glass {
+  background: rgba(13, 19, 33, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.profile-card.template-cyber-glass .card-banner-pattern {
+  height: 90px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.45) 0%, rgba(139, 92, 246, 0.35) 100%);
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   Template 2: Clean Minimalist
+   -------------------------------------------------------------------------- */
+.profile-card.template-modern-minimalist {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.profile-card.template-modern-minimalist .card-banner-pattern {
+  height: 70px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-card.template-modern-minimalist .avatar-frame {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Template 3: Executive Dark Gradient
+   -------------------------------------------------------------------------- */
+.profile-card.template-executive-gradient {
+  background: linear-gradient(180deg, #131b2e 0%, #0a0d17 100%);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.75), 0 0 25px rgba(255, 215, 0, 0.05);
+}
+
+.profile-card.template-executive-gradient .card-banner-pattern {
+  height: 95px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.profile-card.template-executive-gradient .card-pro-badge {
+  border-color: rgba(255, 215, 0, 0.4);
+  color: #fbbf24;
+}
+
+/* --------------------------------------------------------------------------
+   Template 4: Aurora Glow
+   -------------------------------------------------------------------------- */
+.profile-card.template-aurora-hologram {
+  background: rgba(15, 12, 30, 0.92);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+.profile-card.template-aurora-hologram .card-banner-pattern {
+  height: 95px;
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #06b6d4 100%);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Theme Colors (Accents)
+   -------------------------------------------------------------------------- */
+.theme-electric-blue .verified-icon { color: #3b82f6; }
+.theme-electric-blue .card-skill-pill { border-color: rgba(59, 130, 246, 0.3); color: #93c5fd; background: rgba(59, 130, 246, 0.12); }
+.theme-electric-blue .avatar-frame { border-color: #3b82f6; }
+.theme-electric-blue .avatar-status-dot { background: #3b82f6; box-shadow: 0 0 10px #3b82f6; }
+
+.theme-emerald-cyan .verified-icon { color: #10b981; }
+.theme-emerald-cyan .card-skill-pill { border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7; background: rgba(16, 185, 129, 0.12); }
+.theme-emerald-cyan .avatar-frame { border-color: #10b981; }
+.theme-emerald-cyan .avatar-status-dot { background: #10b981; box-shadow: 0 0 10px #10b981; }
+
+.theme-sunset-rose .verified-icon { color: #f43f5e; }
+.theme-sunset-rose .card-skill-pill { border-color: rgba(244, 63, 94, 0.3); color: #fda4af; background: rgba(244, 63, 94, 0.12); }
+.theme-sunset-rose .avatar-frame { border-color: #f43f5e; }
+.theme-sunset-rose .avatar-status-dot { background: #f43f5e; box-shadow: 0 0 10px #f43f5e; }
+
+.theme-violet-pulse .verified-icon { color: #a855f7; }
+.theme-violet-pulse .card-skill-pill { border-color: rgba(168, 85, 247, 0.3); color: #d8b4fe; background: rgba(168, 85, 247, 0.12); }
+.theme-violet-pulse .avatar-frame { border-color: #a855f7; }
+.theme-violet-pulse .avatar-status-dot { background: #a855f7; box-shadow: 0 0 10px #a855f7; }
+
+.theme-midnight-silver .verified-icon { color: #e2e8f0; }
+.theme-midnight-silver .card-skill-pill { border-color: rgba(226, 232, 240, 0.25); color: #e2e8f0; background: rgba(255, 255, 255, 0.08); }
+.theme-midnight-silver .avatar-frame { border-color: #94a3b8; }
+.theme-midnight-silver .avatar-status-dot { background: #10b981; box-shadow: 0 0 10px #10b981; }
+
+/* --------------------------------------------------------------------------
+   Header & Avatar Section
+   -------------------------------------------------------------------------- */
+.card-header-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-container {
+  position: relative;
+  margin-top: -46px;
+  padding-left: 24px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.avatar-frame {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  background: #172033;
+  overflow: visible;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.avatar-status-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid #0d1322;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+}
+
+.card-badge-row {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  z-index: 2;
+}
+
+.card-pro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   Card Identity Section
+   -------------------------------------------------------------------------- */
+.card-identity-section {
+  padding: 16px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-full-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.verified-icon {
+  flex-shrink: 0;
+}
+
+.card-professional-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.card-bio-wrapper {
+  margin-top: 4px;
+}
+
+.card-bio-text {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  transition: color 0.15s ease;
+}
+
+.meta-icon {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.meta-link:hover {
+  color: #60a5fa;
+}
+
+.meta-link:hover .meta-icon {
+  color: #60a5fa;
+}
+
+/* --------------------------------------------------------------------------
+   Skills Section
+   -------------------------------------------------------------------------- */
+.card-skills-section {
+  padding: 10px 24px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills-section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #64748b;
+}
+
+.card-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.card-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.15s ease;
+}
+
+.card-skill-pill:hover {
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Social Links Section
+   -------------------------------------------------------------------------- */
+.card-social-section {
+  padding: 10px 24px 16px;
+}
+
+.social-links-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.social-linkedin:hover {
+  border-color: #0a66c2;
+  color: #60a5fa;
+}
+
+.social-github:hover {
+  border-color: #94a3b8;
+  color: #f8fafc;
+}
+
+.social-portfolio:hover {
+  border-color: #10b981;
+  color: #6ee7b7;
+}
+
+.external-indicator {
+  opacity: 0.6;
+  margin-left: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Card Footer
+   -------------------------------------------------------------------------- */
+.card-footer-section {
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: auto;
+}
+
+.card-footer-branding {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.card-footer-date {
+  font-variant-numeric: tabular-nums;
+}
